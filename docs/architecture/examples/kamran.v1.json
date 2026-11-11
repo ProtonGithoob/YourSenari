@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "0.1.0-proposal",
+  "bundleVersion": "kamran-fiction-1",
+  "mode": "fiction",
+  "locale": "az",
+  "title": "Səhvin əks-sədası",
+  "disclaimer": "Uydurma hekayə. Mümkün izahları göstərir.",
+  "entrySceneId": "report-error",
+  "subjects": [
+    {
+      "id": "kamran",
+      "kind": "fictional",
+      "name": "Kamran",
+      "age": 38
+    },
+    {
+      "id": "leyla",
+      "kind": "fictional",
+      "name": "Leyla",
+      "age": 29
+    }
+  ],
+  "events": [
+    {
+      "id": "error",
+      "participantIds": [
+        "kamran",
+        "leyla"
+      ],
+      "date": {
+        "precision": "unknown"
+      },
+      "description": "Leyla hesabatda səhv edib."
+    }
+  ],
+  "claims": [
+    {
+      "id": "appraisal",
+      "kind": "authored_fiction",
+      "subjectId": "kamran",
+      "eventId": "error",
+      "text": "Səhv mənim nüfuzuma zərər verə bilər.",
+      "evidenceIds": []
+    },
+    {
+      "id": "context",
+      "kind": "hypothesis",
+      "subjectId": "kamran",
+      "eventId": "error",
+      "text": "İş mühiti sərt nəzarəti mükafatlandıra bilər.",
+      "evidenceIds": [],
+      "limitations": [
+        "Bu, ssenari daxilində alternativ izahdır."
+      ]
+    },
+    {
+      "id": "leyla-report",
+      "kind": "authored_fiction",
+      "subjectId": "leyla",
+      "eventId": "error",
+      "text": "Sual verməkdən çəkinirəm.",
+      "evidenceIds": []
+    }
+  ],
+  "relations": [],
+  "perspectives": [
+    {
+      "id": "kamran-view",
+      "subjectId": "kamran",
+      "eventId": "error",
+      "claimIds": [
+        "appraisal",
+        "context"
+      ]
+    },
+    {
+      "id": "leyla-view",
+      "subjectId": "leyla",
+      "eventId": "error",
+      "claimIds": [
+        "leyla-report"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "report-error",
+      "eventId": "error",
+      "perspectiveIds": [
+        "kamran-view",
+        "leyla-view"
+      ],
+      "accessibleText": "Kamran səhvi görür. Leyla onun reaksiyasını gözləyir.",
+      "claimIds": [
+        "appraisal",
+        "context",
+        "leyla-report"
+      ],
+      "choiceIds": [
+        "accuse",
+        "ask",
+        "pause"
+      ],
+      "assetIds": [],
+      "terminal": false
+    },
+    {
+      "id": "tension",
+      "eventId": "error",
+      "perspectiveIds": [
+        "kamran-view",
+        "leyla-view"
+      ],
+      "accessibleText": "İttihamdan sonra söhbət gərginləşə bilər.",
+      "claimIds": [],
+      "choiceIds": [],
+      "assetIds": [],
+      "terminal": true
+    },
+    {
+      "id": "clarify",
+      "eventId": "error",
+      "perspectiveIds": [
+        "kamran-view",
+        "leyla-view"
+      ],
+      "accessibleText": "Sual səbəbi aydınlaşdıra bilər, amma dərhal razılıq yaranmaya bilər.",
+      "claimIds": [],
+      "choiceIds": [],
+      "assetIds": [],
+      "terminal": true
+    },
+    {
+      "id": "later",
+      "eventId": "error",
+      "perspectiveIds": [
+        "kamran-view",
+        "leyla-view"
+      ],
+      "accessibleText": "Fasilədən sonra söhbət davam edir. İş yükü problemi hələ qala bilər.",
+      "claimIds": [],
+      "choiceIds": [],
+      "assetIds": [],
+      "terminal": true
+    }
+  ],
+  "choices": [
+    {
+      "id": "accuse",
+      "label": "İttiham etmək",
+      "targetSceneId": "tension",
+      "kind": "scenario",
+      "assumptions": [
+        "Leyla söhbətdə qalır."
+      ]
+    },
+    {
+      "id": "ask",
+      "label": "Aydınlaşdırıcı sual",
+      "targetSceneId": "clarify",
+      "kind": "scenario",
+      "assumptions": [
+        "Danışmaq üçün təhlükəsiz şərait var."
+      ]
+    },
+    {
+      "id": "pause",
+      "label": "Fasilə və geribildirim",
+      "targetSceneId": "later",
+      "kind": "scenario",
+      "assumptions": [
+        "Söhbətə qayıtmaq mümkündür."
+      ]
+    }
+  ],
+  "assets": [],
+  "sources": [],
+  "reviewStatus": "draft",
+  "notes": "Minimal illustrative fixture. Not a complete pilot story, executable schema or approved publication."
+}
